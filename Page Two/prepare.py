@@ -34,57 +34,7 @@ next_page.click()
 #ensure all list items are loaded first
 time.sleep(5)
 
-#restart range if breaks and delete entry if needed
-#does the first page, then needs to move to the next page
 for i in range(202,260):
-    #known videos that don't work
-    if i == 0:
-        continue
-    if i == 8:
-        continue
-    if i == 16:
-        continue
-    if i == 20:
-        continue
-    if i == 24:
-        continue
-    if i == 37:
-        continue
-    if i == 48:
-        continue
-    if i == 53:
-        continue
-    if i == 88:
-        continue
-    if i == 99:
-        continue
-    if i == 126:
-        continue
-    if i == 128:
-        continue
-    if i == 129:
-        continue
-    if i == 145:
-        continue
-    if i == 150:
-        continue
-    if i == 163:
-        continue
-    if i == 165:
-        continue
-    if i == 169:
-        continue
-    if i >= 173 and i <= 176:
-        continue
-    if i == 196:
-        continue
-    if i == 199:
-        continue
-    if i == 201:
-        continue
-    if i == 202:
-        continue
-
     confirm_load = wait.until(EC.element_to_be_clickable((By.ID, "ToggleView")))
     video_list = driver.find_elements(By.ID, "Name")
     video_item = video_list[i]
@@ -122,7 +72,7 @@ for i in range(202,260):
     
     close_button.click()
     print("successfully completed entry", i, ":", video_title)
-    #refreshing the page entirely ensures selenium doesn't get confused on which element it's looking for
+
     driver.refresh()
 
 driver.close()
